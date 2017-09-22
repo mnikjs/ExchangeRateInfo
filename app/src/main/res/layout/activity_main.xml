@@ -35,12 +35,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="30"
-            android:text="name"
+            android:layout_weight="40"
+            android:text="SouthKorea"
             android:gravity="center"/>
         <TextView
             android:layout_width="0dp"
@@ -49,13 +45,9 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="30"
-            android:text="name"
+            android:layout_weight="40"
+            android:text="USA"
             android:gravity="center"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="10"/>
     </LinearLayout>
 
     <LinearLayout
@@ -73,7 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="20"
-            android:background="#000000"/>
+            android:src="@drawable/kr"/>
         <!--<TextView-->
             <!--android:layout_width="100dp"-->
             <!--android:layout_height="30dp"-->
@@ -86,7 +78,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="20"
-            android:background="#ff0"/>
+            android:src="@drawable/change"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -95,7 +87,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="20"
-            android:background="#ff0000"/>
+            android:src="@drawable/us"/>
     </LinearLayout>
 
     <LinearLayout
@@ -116,11 +108,23 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"/>
-        <TextView
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:text="100000"/>
+            android:layout_weight="20">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="100000"
+                android:src="@drawable/input_amt"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1111"
+                android:background="@null"
+                android:gravity="center"/>
+        </RelativeLayout>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -144,19 +148,27 @@
             android:layout_height="match_parent"
             android:layout_weight="10"/>
     </LinearLayout>
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"></LinearLayout>
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="55">
-        
+        android:layout_weight="55"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <!-- ListView, GridView, RecyclerView? -->
+        <!-- CustomCell 하나를 만들고 반복되게한다 -->
         <ListView
+            android:id="@+id/currencylistview"
             android:layout_width="match_parent"
-            android:layout_height=""></ListView>
+            android:layout_height="0dp"
+            android:layout_weight="100">
+
+        </ListView>
     </LinearLayout>
 </LinearLayout>
