@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
+    android:background="#16e2e3e0"
     tools:context="com.example.a60029512.exrate.MainActivity">
     <!--리니어 레이아웃은 방향을 정해줘야함
     android:orientation="horizontal" width 0
@@ -21,7 +22,7 @@
             android:id="@+id/UpdateTimeView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="update 2017.09.15 4:15pm"
+            android:text="update 2017.11.11 2:15pm"
             android:gravity="center"/>
     </LinearLayout>
 
@@ -33,20 +34,22 @@
         android:weightSum="100">
 
         <TextView
+            android:id="@+id/countryname1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="40"
-            android:text="SouthKorea"
+            android:text=""
             android:gravity="center"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="20"/>
         <TextView
+            android:id="@+id/countryname2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="40"
-            android:text="USA"
+            android:text=""
             android:gravity="center"/>
     </LinearLayout>
 
@@ -58,36 +61,51 @@
         android:weightSum="100">
 
         <TextView
+            android:id="@+id/currencycode1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"/>
+            android:layout_weight="10"
+            android:text=""
+            android:visibility="invisible" />
+
         <ImageView
+            android:id="@+id/countryimage1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:src="@drawable/kr"/>
-        <!--<TextView-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="30dp"-->
-            <!--android:background="#ff0"/>-->
+            android:layout_weight="20" />
+
         <TextView
+            android:id="@+id/countrythreeword1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"/>
+            android:layout_weight="10"
+            android:visibility="invisible"/>
         <ImageView
+            android:id="@+id/changeCountry"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="20"
             android:src="@drawable/change"/>
         <TextView
+            android:id="@+id/currencycode2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"/>
+            android:layout_weight="10"
+            android:text=""
+            android:visibility="invisible"/>
+
         <ImageView
+            android:id="@+id/countryimage2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:src="@drawable/us"/>
+            android:layout_weight="20" />
+
+        <TextView
+            android:id="@+id/countrythreeword2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:visibility="invisible"/>
     </LinearLayout>
 
     <LinearLayout
@@ -96,57 +114,82 @@
         android:layout_weight="2">
 
     </LinearLayout>
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
         android:layout_weight="8"
+        android:orientation="horizontal"
         android:weightSum="100">
-        
+
         <TextView
+            android:id="@+id/textView4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"/>
+            android:layout_weight="10" />
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="20">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="100000"
-                android:src="@drawable/input_amt"/>
+                android:src="@drawable/input_amt" />
+
             <EditText
+                android:id="@+id/countryamt1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="1111"
                 android:background="@null"
-                android:gravity="center"/>
+                android:gravity="right|center"
+                android:inputType="numberDecimal"
+                android:text=""
+                android:layout_alignParentBottom="true" />
         </RelativeLayout>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"/>
+            android:layout_weight="10" />
+
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="20"
-            android:background="#f998"/>
+            android:src="@drawable/equal" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"/>
+            android:layout_weight="10" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/input_amt"
+                android:text="100000" />
+
+            <EditText
+                android:id="@+id/countryamt2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="right|center"
+                android:text=""
+                android:inputType="numberDecimal"/>
+        </RelativeLayout>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:text="1000000"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="10"/>
+            android:layout_weight="10" />
     </LinearLayout>
 
     <LinearLayout
@@ -164,7 +207,7 @@
         <!-- ListView, GridView, RecyclerView? -->
         <!-- CustomCell 하나를 만들고 반복되게한다 -->
         <ListView
-            android:id="@+id/currencylistview"
+            android:id="@+id/currencylistitem"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="100">

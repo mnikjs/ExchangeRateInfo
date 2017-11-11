@@ -18,10 +18,11 @@
         android:layout_weight="50">
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="50"
-            android:background="#0000ff"/>
+            android:background="#0000ff" />
 
         <TextView
             android:id="@+id/textView"
